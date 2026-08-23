@@ -9,3 +9,4 @@ class Smartphone:
         return self.model
     def get_namber(self):
         return self.namber
+    

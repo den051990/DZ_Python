@@ -10,3 +10,4 @@ catalog = [
 
 for smartphone in catalog:
     print(f"{smartphone.marka} - {smartphone.model}. {smartphone.namber}")
+    
