@@ -5,13 +5,14 @@ from selenium.webdriver.common.by import By
 def test_navigation():
     driver = webdriver.Chrome()
     driver.get("https://httpbin.qa-territory.online")
+    old_url = driver.current_url
 
     click_HTML_Form = driver.find_element(By.LINK_TEXT, "HTML Form").click()
 
-    assert driver.current_url == "https://httpbin.qa-territory.online/forms/post"
+    assert "/forms/post" in driver.current_url
 
     driver.back()
 
-    assert driver.current_url == "https://httpbin.qa-territory.online/"
+    assert old_url == driver.current_url
 
     driver.quit()

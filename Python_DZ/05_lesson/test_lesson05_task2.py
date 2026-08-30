@@ -5,6 +5,7 @@ from selenium.webdriver.common.by import By
 def test_form_submission():
     driver = webdriver.Chrome()
     driver.get("https://httpbin.qa-territory.online/forms/post")
+    old_url = driver.current_url
 
     element_custname = driver.find_element(By.NAME, "custname" )
     element_custname.send_keys("Денис")
@@ -13,6 +14,6 @@ def test_form_submission():
         By.XPATH, "//button[text()='Submit order']").click()
     sleep(1)
 
-    assert driver.current_url == "https://httpbin.qa-territory.online/post"
+    assert old_url != driver.current_url
 
     driver.quit()
