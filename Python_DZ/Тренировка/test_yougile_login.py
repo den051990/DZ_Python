@@ -31,3 +31,5 @@ def test_yougile_login():
 
     assert user_name.is_displayed()
     assert user_name.get_attribute("value") == "Sky_Pro"
+
+    driver.quit()
