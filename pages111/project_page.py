@@ -32,7 +32,7 @@ class ProjectPage:
             EC.presence_of_element_located(self.ADD_PROJECT_BUTTON)).click()
         self.wait.until(
             EC.presence_of_element_located(self.TITLE_PROJECT_INPUT)
-        ).send_keys(project_title)
+        ).send_keys()
         self.driver.find_element(*self.SAVE_PROJECT_BUTTON).clic()
 
     def get_project_page_header(self):

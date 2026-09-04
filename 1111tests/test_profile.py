@@ -1,4 +1,4 @@
-from pages.profile_page import ProfilePage
+from pages111.profile_page import ProfilePage
 import faker
 import config
 import pytest
