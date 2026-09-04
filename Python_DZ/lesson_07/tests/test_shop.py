@@ -14,3 +14,4 @@ def test_shop_page(driver):
     driver.quit
 
     assert summa == "$58.29"
+    
