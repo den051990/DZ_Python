@@ -18,3 +18,4 @@ def test_calc_page(driver):
     assert element.text == "15"
 
     driver.quit()
+    

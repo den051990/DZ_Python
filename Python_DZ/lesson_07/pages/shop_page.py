@@ -60,3 +60,4 @@ class ShopPage:
             self.SUM_TOTAL))
         total_text = total_element.text
         return total_text.replace("Total: ", "").strip()
+    

@@ -38,3 +38,4 @@ class CalcPage:
         self.wait.until(EC.text_to_be_present_in_element(
         self.ELEMENT, "15"))
         return self.driver.find_element(*self.ELEMENT)
+    
