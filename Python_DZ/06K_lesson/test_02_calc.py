@@ -27,7 +27,7 @@ def test_calc():
                 (By.XPATH, "//span[text()='=']"))).click()
 
     WebDriverWait(driver, 60).until(EC.text_to_be_present_in_element(
-        (By.CLASS_NAME, "screen"), "15"))
+        (By.CSS_SELECTOR, ".screen"), "15"))
 
     element = driver.find_element(By.CSS_SELECTOR, ".screen")
     assert element.text == "15"
