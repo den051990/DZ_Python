@@ -3,18 +3,20 @@ import requests
 
 class ApiYougile:
     def __init__(self, url) -> None:
-            self.url = url
+        self.url = url
 
     def get_token(self, login='', password=''):
-            creds = {
-                "login": login,
-                "password": password
-            }
-            resp = requests.post(self.url + '/api-v2/auth/keys/get', json=creds)
-            return resp.json()[0]["key"]
+        creds = {
+            "login": login,
+            "password": password
+        }
+        resp = requests.post(
+            self.url + '/api-v2/auth/keys/get', json=creds)
+        return resp.json()[0]["key"]
 
     def get_company_list(self, params_to_add=None):
-        resp = requests.get(self.url + '/api-v2/projects', params=params_to_add)
+        resp = requests.get(
+            self.url + '/api-v2/projects', params=params_to_add)
         return resp.json()
 
     def create_project(self, title):

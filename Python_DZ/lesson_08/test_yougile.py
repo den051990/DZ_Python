@@ -2,16 +2,18 @@ from Python_DZ.lesson_08.api_yougile import ApiYougile
 
 api = ApiYougile("https://yougile.com")
 
+
 def test_activ_token():
     resp = api.get_token()
 
     assert resp == ""
 
+
 def test_create_project_positive():
     api.get_token()
     title = "Учеба"
     resp = api.create_project(title)
-    new_id = resp.json().get("id")
+    resp.json().get("id")
 
     assert resp.status_code == 201
 
@@ -20,6 +22,7 @@ def test_create_project_positive():
     assert "id" in data
     assert isinstance(data.get("id"), str)
 
+
 def test_create_project_negative():
     api.get_token()
     title = ""
@@ -27,8 +30,9 @@ def test_create_project_negative():
 
     assert resp.status_code == 400
 
-    data = resp.json()
+    resp.json()
     print("Тело ответа:", resp.json())
+
 
 def test_redact_project_pozitive():
     api.get_token()
@@ -46,6 +50,7 @@ def test_redact_project_pozitive():
     data_after_get = get_resp.json()
     assert data_after_get["title"] == new_title
 
+
 def test_redact_project_negative():
     api.get_token()
     project_id = "0a0000cb-000c-0fe0-b000-d00000cea0a0"
@@ -54,8 +59,9 @@ def test_redact_project_negative():
 
     assert redact.status_code == 404
 
-    data = redact.json()
+    redact.json()
     print("Тело ответа:", redact.json())
+
 
 def test_get_project_id_pozitive():
     api.get_token()
@@ -71,6 +77,7 @@ def test_get_project_id_pozitive():
 
     assert returned_id == project_id
 
+
 def test_get_project_id_negative():
     api.get_token()
     project_id = "0a0000cb-111c-0fe0-b000-d00000cea0a0"
@@ -78,5 +85,5 @@ def test_get_project_id_negative():
 
     assert get_resp.status_code == 404
 
-    data = get_resp.json()
+    get_resp.json()
     print("Тело ответа:", get_resp.json())
