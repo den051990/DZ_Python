@@ -1,5 +1,5 @@
-from student import Student
-from course_group import CourseGroup
+from Python_DZ.Тренировка.student import Student
+from Python_DZ.Тренировка.course_group import CourseGroup
 
 student = Student("Денис", "Денисов", 20, "Информатика")
 classmate1 = Student("Сергей", "Сергеев", 22, "Информатика")

@@ -1,5 +1,5 @@
 import pytest
-from calculator import Calculator
+from Python_DZ.Тренировка.calculator import Calculator
 
 calculator = Calculator()
 

@@ -1,4 +1,4 @@
-from product import Product
+from Python_DZ.Тренировка.product import Product
 
 my_product = Product("TV", 50000)
 

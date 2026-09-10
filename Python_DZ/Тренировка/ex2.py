@@ -1,4 +1,4 @@
-from book import Book
+from Python_DZ.Тренировка.book import Book
 
 library = [
     Book("Путь строителя", "Алексей Ковтунов"),
