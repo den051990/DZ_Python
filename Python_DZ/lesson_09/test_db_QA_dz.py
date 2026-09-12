@@ -1,4 +1,3 @@
-from sqlalchemy.sql import text
 from Python_DZ.lesson_09.db_QA_dz import DatabaseQA
 
 
@@ -11,7 +10,7 @@ def test_add_subject():
 
     subject_id = 222
     subject_title = "testing"
-    result = db.create(subject_id, subject_title)
+    db.create(subject_id, subject_title)
 
     body = db.get_subjects()
     len_after = len(body)
@@ -26,8 +25,9 @@ def test_add_subject():
             found = True
             assert company["subject_title"] == "testing"
             break
-    
+
     assert found
+
 
 def test_update_subject():
     subject_id = 222
@@ -41,6 +41,7 @@ def test_update_subject():
 
     assert edited["subject_title"] == new_title
 
+
 def test_delete():
     subject_id = 222
     subject_title = "testing"
@@ -49,7 +50,7 @@ def test_delete():
     body = db.get_subjects()
     len_before = len(body)
 
-    deleted = db.delete(subject_id)
+    db.delete(subject_id)
 
     body = db.get_subjects()
     len_after = len(body)
