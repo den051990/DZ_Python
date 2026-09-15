@@ -1,6 +1,7 @@
-from Python_DZ.lesson_10.pages.calc2_page import CalcPage  
+from Python_DZ.lesson_10.pages.calc2_page import CalcPage
 from selenium import webdriver
 import allure
+
 
 @allure.feature("Калькулятор")
 @allure.title("Тестирование калькулятора")
@@ -22,7 +23,7 @@ def test_calc_page(driver):
     element = get_calc.expect_result()
 
     with allure.step("Проверка полученного результата с ожидаемым"):
+
         assert element.text == "15"
 
     driver.quit()
-    

@@ -35,7 +35,7 @@ class ShopPage:
 
     @allure.step("Авторизация в магазине")
     def open_shop(self):
-        """Открывает страницу магазина в браузере 
+        """Открывает страницу магазина в браузере
         и авторизируется с помощью своего логина и пароля.
         """
         self.driver.get("https://www.saucedemo.com/")
@@ -48,7 +48,9 @@ class ShopPage:
 
     @allure.step("Выбор товаров")
     def product_selection(self):
-        """Выбираем товары, переходим в корзину и переходим к оформлению заказа."""
+        """Выбираем товары, переходим в
+        корзину и переходим к оформлению заказа.
+        """
         self.wait.until(EC.element_to_be_clickable(
             self.BACKPACK)).click()
         self.wait.until(EC.element_to_be_clickable(
@@ -79,9 +81,9 @@ class ShopPage:
     @allure.step("Проверяем итоговую сумму заказа")
     def summary_total(self):
         """Проверяем что итоговая сумма равна ожидаемой"""
-        self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        self.driver.execute_script(
+            "window.scrollTo(0, document.body.scrollHeight);")
         total_element = self.wait.until(EC.presence_of_element_located(
             self.SUM_TOTAL))
         total_text = total_element.text
         return total_text.replace("Total: ", "").strip()
-    

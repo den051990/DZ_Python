@@ -21,4 +21,3 @@ def test_shop_page(driver):
     driver.quit
     with allure.step("Проверка полученного результата с ожидаемым"):
         assert summa == "$58.29"
-    

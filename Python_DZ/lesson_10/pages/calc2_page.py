@@ -13,7 +13,7 @@ class CalcPage:
     TIME_VALIE = (By.ID, "delay")
     BUTTON_7 = (By.XPATH, "//span[text()='7']")
     BUTTON_PLUS = (By.XPATH, "//span[text()='+']")
-    BUTTON_8 =  (By.XPATH, "//span[text()='8']")
+    BUTTON_8 = (By.XPATH, "//span[text()='8']")
     BUTTON_RAVNO = (By.XPATH, "//span[text()='=']")
     ELEMENT = (By.CLASS_NAME, "screen")
 
@@ -28,7 +28,9 @@ class CalcPage:
     @allure.step("Открытие страницы калькулятора")
     def open_calc(self):
         """Открывает страницу калькулятора в браузере."""
-        self.driver.get("https://bonigarcia.dev/selenium-webdriver-java/slow-calculator.html")
+        self.driver.get(
+            "https://bonigarcia.dev/"
+            "selenium-webdriver-java/slow-calculator.html")
 
     @allure.step("Установка задержки {second} секунд")
     def delay_time(self, second):
@@ -41,7 +43,9 @@ class CalcPage:
 
     @allure.step("Нажатие кнопок")
     def click_button(self):
-        """Выполняет последовательное нажатие кнопок для вычисления выражения (7+8=)."""
+        """Выполняет последовательное нажатие
+          кнопок для вычисления выражения (7+8=).
+        """
         self.wait.until(EC.element_to_be_clickable(
             self.BUTTON_7)).click()
         self.wait.until(EC.element_to_be_clickable(
@@ -53,10 +57,10 @@ class CalcPage:
 
     @allure.step("Ожидание и получение результата с экрана калькулятора")
     def expect_result(self):
-        """Ожидает, пока в поле результата появится число 15, затем возвращает его.
+        """Ожидает, пока в поле результата
+        появится число 15, затем возвращает его.
         Return:
             str: Текст, отображаемый в поле результата (ожидается '15')."""
         self.wait.until(EC.text_to_be_present_in_element(
-        self.ELEMENT, "15"))
+                        self.ELEMENT, "15"))
         return self.driver.find_element(*self.ELEMENT)
-    
