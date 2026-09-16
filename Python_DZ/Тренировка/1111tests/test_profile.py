@@ -1,4 +1,4 @@
-from pages111.profile_page import ProfilePage
+from Python_DZ.Тренировка.pages111.profile_page import ProfilePage
 import faker
 import config
 import pytest
